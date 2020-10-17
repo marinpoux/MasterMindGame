@@ -1,0 +1,193 @@
+/************************ Général *************************/
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    text-justify: auto;
+    margin: 5%;
+}
+
+header {
+    font-family: castellar;
+    font-size: 5em;
+
+    margin: auto;
+    margin-top: 0.5ex;
+}
+
+footer {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+    font-style: italic;
+    bottom: 0;
+    width: 90%;
+
+}
+
+div {
+    border: solid 2px #ffffff;
+    border-radius: 1em;
+}
+
+/* div à bords invisibles */
+.noBord {
+    border: transparent;
+}
+
+/* concerne tous les div flex */
+.flex {
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+/************************* Ecran titre ****************************/
+
+/* div commencer la partie */
+#commencer {
+    position: absolute;
+    top: 20em;
+
+    margin: auto;
+    padding: 1em;
+
+    z-index: 3;
+
+    width: fit-content;
+    height: fit-content;
+
+    font-size: x-large;
+
+    background-color: #ffebee;
+}
+
+/************************** Mise en page de l'interface ***************************/
+
+/* div conteneur du jeu */
+#MasterMind {
+    width: 50em;
+
+    margin-left: 10%;
+    margin-right: 10%;
+
+    z-index: 1;
+}
+
+/* 2*div contenant un div visuel et 1 div interactible */
+.interface {
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+    width: 20em;
+    height: 50em;
+
+    background-color: #ffebee;
+}
+
+/* support purement visuel du MasterMind - pas d'interaction avec le joueur */
+/* les éléments de classe .placement et .indicateur du plateau contiennent aussi la classe .plateau */
+.plateau {
+}
+
+/* div affichant les couleurs et positions de pions */
+.placement {
+    width: 14em;
+    height: 4em;
+
+    background-color: #ffced6;
+}
+
+/* div indiquant le résultat */
+.indicateur {
+    width: 4em;
+    height: 4em;
+
+    background-color: #ffced6;
+}
+
+/* div représentant les pions/couleurs */
+.cellule {
+    height: 2em;
+    width: 2em;
+}
+
+/* div représentant les pions/couleurs */
+.indice {
+    height: 1em;
+    width: 1em;
+
+    margin: 5%;
+}
+
+/* div contenant les listes de sélection de couleurs */
+#listes {
+    width: 80%;
+}
+
+/* div contenant les boutons */
+#boutons {
+    flex-direction: column;
+    width: 10em;
+    height: 10em;
+}
+
+#contSoluce {
+    width: 15em;
+}
+
+#solution {
+    margin-bottom: 1em;
+}
+
+/*******************************************************************/
+
+/* masquer éléments */
+.masqueOn {
+    display: none;
+}
+
+/* afficher éléments */
+.masqueOff {
+    display: flex;
+}
+
+/************************ Aide - Infobulle ************************/
+ 
+button.aide div {
+    display: none; /* On masque l'infobulle. */
+}
+ 
+button.aide:hover {
+    background: none; /* Correction d'un bug d'Internet Explorer. */
+    z-index: 500; /* On définit une valeur pour l'ordre d'affichage. */
+   
+    /* cursor: help;  On change le curseur par défaut par un curseur d'aide. */
+}
+ 
+button.aide:hover div {
+    display: inline; /* On affiche l'infobulle. */
+    position: absolute;
+   
+    top: 25em; /* On positionne notre infobulle. */
+    left: 20%;
+
+    width: 50%;
+    height: fit-content;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+    line-height: 3ex;
+   
+    background: white;
+   
+    padding: 5%;
+   
+    border: 5px #ffced6 double;
+ }

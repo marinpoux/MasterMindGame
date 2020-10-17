@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MasterMind</title>
+        <meta charset="utf-8"/>
+
+        <link rel="shortcut icon" type="image/x-icon" href="../images/aubergine.png" />
+        <link rel="stylesheet" href="../css/cssMasterMind.css" />
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js">
+        </script>
+    </head>
+
+    <script type="text/javascript" src="../js/structures.js">
+    </script>
+
+    <body onload="randomCode();" class="flex">
+
+        <header>
+            Mastermind
+        </header>
+
+        <!--menu de démarrage-->
+        <div id="commencer" name="commencer" class="commencement masqueOff">
+            Cliquer pour commencer!
+        </div>
+
+        <!--(in)visibilité des éléments-->
+        <script>
+            $("#commencer").click(function(){
+            masqueOn('commencement');
+            masqueOff('MasterMind');
+            }); 
+        </script>
+
+        <div id="MasterMind" name="MasterMind" class="flex MasterMind noBord masqueOn"> 
+
+            <!--div contenant l'affichage du MasterMind ; pas d'interaction avec le joueur-->
+            <div id="plateau" name="plateau" class="interface flex">
+
+                <script>
+    
+                    //génération du 'plateau' de jeu
+                    plateau();
+    
+                </script>
+    
+            </div>
+
+            <!--div contenant les éléments avec lesquels le joueur peut interagir-->
+            <div id="jeu" name="jeu" class="interface flex">
+
+                <!--affichage des couleurs proposées par le joueur-->
+                <div id="visuel" name="visuel" class="placement flex">
+
+                    <script>
+
+                        //génération des div représentant les couleurs
+                        pions('visu', 'cellule');
+
+                    </script>
+
+                </div>
+
+                <!--listes de sélection des couleurs-->
+                <div id="listes" name="listes" class="noBord flex">
+                
+                    <script>
+
+                        //génération des lites de sélection de couleur
+                        listes();
+
+                    </script>
+                
+                </div>
+
+                <!--boutons: valider, recommencer, aide-->
+                <div id="boutons" name="boutons" class="noBord flex">
+
+                    <input type="button" id="valid" name="valid" value="Valider" onclick="valider()">
+                    <input type="button" id="reco" name="reco" value="Recommencer" onclick="recommencer()">
+                    <button class="aide" id="help" name="help" value="Aide" onclick="">
+                        Aide
+
+                        <div id="infobulle" name="infobulle" class="flex">
+                            Proposez des suites de couleurs et parvenez à deviner la combinaison cachée!
+                            </br>
+                            Après chaque proposition, le jeu indiquera par du noir si la couleur est bien placée,
+                            
+                             ou par du blanc si elle est mal placée.
+                            
+                             Sinon, c'est que cette couleur ne fait pas partie de la combinaison secrète!
+                            </br>
+                            Attention : vous n'avez que 10 essais!
+                        </div>
+
+                    </button>
+
+                </div>
+
+                <!--réponse: s'affiche uniquement en fin de partie-->
+                <div id="contSoluce" name="contSoluce" class="noBord flex " style="visibility: hidden;">
+                
+                    <div id="solution" name="solution" class='noBord flex'>
+                        La combinaison était :
+                    </div>
+
+                    <div id="soluce" name="soluce" class="placement flex">
+
+                        <script>
+    
+                            //affichage visuel du code généré aléatoirement
+                            pions('soluce', 'cellule');
+    
+                        </script>
+    
+                    </div>
+                
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer>
+            Marine Schwartz - 2020
+        </footer>
+    </body>
+</html>
