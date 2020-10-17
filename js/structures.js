@@ -278,7 +278,7 @@ function majPlateau() {
 
 //vérifie si la partie est terminée
 function verifCompt() {
-    if ((compteur > nbLignes) && (victoire == false)) {
+    if ((compteur >= nbLignes) && (victoire == false)) {
         codeSoluce();
     }
 
