@@ -8,9 +8,9 @@ var compteur = 0;
 var victoire = false;
     //devient true si la combinaison proposée par le joueur est identique à celle générée
 
-var couleurs = ['bleu', 'vert', 'jaune', 'rouge', 'blanc', 'noir'];
+var couleurs = ['bleu', 'vert', 'jaune', 'rouge', 'orange', 'violet', 'blanc', 'noir'];
     //tableau des noms des couleurs affichées dans les listes
-var rvbCodes = ['#0000ff', '#00cc00', '#ffff00', '#ff0000', '#ffffff', '#000000'];
+var rvbCodes = ['#0000ff', '#00cc00', '#ffff00', '#ff0000', '#ff8800', '#9900ff', '#ffffff', '#000000'];
     //tableau des valeurs hexadécimales des couleurs
 
 var randCode = [];
@@ -41,7 +41,7 @@ function randomCode() {
 
     for (var i=0; i<nbCases; i++) {
 
-        //génération d'un code aléatoire de 4 chiffres de 0 à 5 (6 options)
+        //génération d'un code aléatoire de 4 chiffres de 0 à 7 (8 options)
         nbTemp = Math.round(Math.random()*10);
         while (nbTemp >= couleurs.length) {
             nbTemp = Math.round(Math.random()*10);
